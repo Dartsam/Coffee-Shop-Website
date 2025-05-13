@@ -5,13 +5,17 @@ html, body {
   
   .navbar {
     padding: 1rem 0;
+    background-color: black;
   }
   
+  .section {
+    background-color: black;
+  }
 
   .hero {
     position: relative;
+    background: url('images/home-img.jpeg') center/cover no-repeat;
     height: 100vh; 
-    background: url("path/to/coffee-bg.jpg") center/cover no-repeat;
     overflow: hidden;
   }
   
@@ -49,7 +53,96 @@ html, body {
     font-size: 1rem;
     padding: 0.75rem 1.5rem;
   }
-  
+
+  .custom-bg {
+  background-color: #000 !important; 
+  color: #fff !important;       
+  border-color: #6c757d !important;
+}
+
+.custom-bg::placeholder {
+  color: #ccc;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.icon-box:hover {
+  background-color: #ffc107; /* Bootstrap's warning color */
+}
+
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 250px;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#toggleCart:checked ~ .cart-dropdown {
+  display: flex;
+}
+
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.remove {
+  cursor: pointer;
+  color: black;
+}
+
+.checkout-btn {
+  background-color: #f0c14b;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+
 
   @media (max-width: 992px) {
     .hero h1 {
