@@ -54,6 +54,31 @@ html, body {
     padding: 0.75rem 1.5rem;
   }
 
+
+.animate-content {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.zoom-hover {
+  transition: transform 0.3s ease;
+}
+
+.zoom-hover:hover {
+  transform: scale(1.05);
+}
+
+
+
   .custom-bg {
   background-color: #000 !important; 
   color: #fff !important;       
@@ -80,34 +105,16 @@ html, body {
   background-color: #ffc107; /* Bootstrap's warning color */
 }
 
-.cart-container {
-  position: relative;
-  display: inline-block;
+.cart-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
 }
 
-.cart-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: white;
+.dropdown-menu {
+  z-index: 1050; /* Make sure it appears on top */
 }
 
-.cart-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  width: 250px;
-  background: white;
-  color: black;
-  border: 1px solid #ccc;
-  display: none;
-  flex-direction: column;
-  padding: 10px;
-  z-index: 1000;
-}
-
-#toggleCart:checked ~ .cart-dropdown {
-  display: flex;
-}
 
 .cart-item {
   display: flex;
